@@ -9,7 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You need to have Postgres installed. Clone the project in a directory considered as root directory and execute the following commands in root directory.
+You need to have Postgres installed. Clone the project execute the following commands in src directory.
 
 1. This will add new migration files.
 
@@ -27,7 +27,7 @@ dotnet ef database update
 
 ### Building and Running
 
-1. Change to the root directory. (i.e. `./UrlShortener`)
+1. Change to the src directory. (i.e. `./src`)
 2. To get all *NuGet* Packages needed execute the following command.
 
 ```
