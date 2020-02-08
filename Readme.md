@@ -1,7 +1,7 @@
 
 # UrlShortener with .NET Core
 
-This project is a simple *URLshortener* implemented with .NET Core Framework and uses powerful Entity Framework as its *ORM* to fetch data from Postgres Database.
+This project is a simple *URLshortener* implemented with .NET Core Framework and uses powerful Entity Framework as its *ORM* to fetch data from Postgres Database. It encodes valid long URLs to short ones and can redirect to a long URL after getting the corresponding short URL.
 
 ## Getting Started
 
@@ -48,7 +48,7 @@ Two classes exist in MainController, one implement Post action and the other imp
 
 After running the project you can usually get data from http://localhost:5000 or http://localhost:5001 but it may be different based on your system config.
 
-1. **Post**: The post action gets a long URL in a format of a *JSON* and generates a short URL which is a stirng of length 8 consisting of only lower and upper case.  http://localhost:5000/urls
+1. **Post**: The post action gets a long URL in a format of a *JSON* and checks to see if it's a valid URL. In the case of validation, it generates a short URL which is a stirng of length 8 consisting of only lower and upper case. If the long URL is not valid the request status will be 400.  http://localhost:5000/urls
 
    ```json
    {
