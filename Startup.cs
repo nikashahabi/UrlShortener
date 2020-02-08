@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using UrlShortener;
+using UrlShortener.Services;
 namespace UrlShortener
 {
     public class Startup
@@ -29,6 +29,7 @@ namespace UrlShortener
             services.AddDbContext<AppDbContext>(opts =>{
                 opts.UseNpgsql("Host=localhost;Database=urldatabase;Username=postgres;Password='postgres'");
             });
+            services.AddScoped<UrlService>();
             services.AddControllers();
         }
 
