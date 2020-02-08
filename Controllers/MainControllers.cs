@@ -33,11 +33,11 @@ namespace UrlShortener.Controller
                         stringChars[i] = chars[rand.Next(chars.Length)];
                     }
                     shortUrlString =  new String(stringChars);
-                    //check = urlService.shortUrlExists(shortUrlString);
+                    check = urlService.shortUrlExists(shortUrlString);
                 }
                 while (check==true);
                 url.shortUrl = shortUrlString;
-                //urlService.addsToDatabase(url);
+                urlService.addsToDatabase(url);
                 return Ok(url);
             }
             else{
