@@ -52,7 +52,7 @@ After running the project you can usually get data from http://localhost:5000 or
 
    ```json
    {
-     "longUrl"= 'www.google.com'
+     "longUrl": 'www.google.com'
    }
    ```
 
@@ -60,8 +60,8 @@ With the response being something like the following:
 
    ```json
    {
-     "longUrl"= 'www.google.com',
-     "shortUrl"= 'abcdABCD'
+     "longUrl": 'www.google.com',
+     "shortUrl": 'abcdABCD'
    }
    ```
 
