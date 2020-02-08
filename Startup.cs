@@ -27,7 +27,7 @@ namespace UrlShortener
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(opts =>{
-                opts.UseNpgsql("Host=localhost;Database=urldatabase;Username=postgres;Password='postgres'");
+                opts.UseNpgsql("Host=localhost;Database=urlsdatabase;Username=postgres;Password='postgres'");
             });
             services.AddScoped<UrlService>();
             services.AddControllers();
