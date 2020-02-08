@@ -3,12 +3,18 @@ using UrlShortener.Models;
 using System;
 using System.Text.RegularExpressions;
 using System.Linq;
+using UrlShortener.Services;
 namespace UrlShortener.Controller
 {
     [ApiController]
     [Route("/urls")]
     public class UrlGenerator : ControllerBase
     {
+        public UrlService urlService;
+        public UrlGenerator (UrlService urlService)
+        {
+            this.urlService = urlService;
+        }
 
         [HttpPost]
         public ActionResult <Url> PostUrls ([FromBody]Url url)
@@ -37,6 +43,39 @@ namespace UrlShortener.Controller
             else{
                 return NotFound(url);
             }
+        }
+    }
+    
+    [ApiController]
+    [Route("/redirect/{*shortDomain}")]
+    public class RedirectUrl : ControllerBase
+    {
+        public UrlService urlService;
+        public RedirectUrl (UrlService urlService)
+        {
+            this.urlService = urlService;
+        }
+        [HttpGet]
+        public IActionResult redirect (string shortDomain)
+        {
+            if (urlService.shortUrlExists(shortDomain))
+            {
+                string[] prefixes = { "http", "https", "ftp" };
+                if (prefixes.Any(prefix => shortDomain.StartsWith(prefix)))
+                {
+                    return Redirect(urlService.returnLongUrl(shortDomain));
+                }
+                else
+                {
+                    return Redirect("https://"+urlService.returnLongUrl(shortDomain));
+
+                }
+            }
+            else
+            {
+                return NotFound();
+            }
+            
         }
     }
 }
