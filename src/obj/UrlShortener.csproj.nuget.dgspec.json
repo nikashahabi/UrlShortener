@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nayvaka/Documents/Alibaba/UrlShortener/UrlShortener.csproj": {}
+    "/Users/nayvaka/Documents/Alibaba/UrlShortener/src/UrlShortener.csproj": {}
   },
   "projects": {
-    "/Users/nayvaka/Documents/Alibaba/UrlShortener/UrlShortener.csproj": {
+    "/Users/nayvaka/Documents/Alibaba/UrlShortener/src/UrlShortener.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nayvaka/Documents/Alibaba/UrlShortener/UrlShortener.csproj",
+        "projectUniqueName": "/Users/nayvaka/Documents/Alibaba/UrlShortener/src/UrlShortener.csproj",
         "projectName": "UrlShortener",
-        "projectPath": "/Users/nayvaka/Documents/Alibaba/UrlShortener/UrlShortener.csproj",
+        "projectPath": "/Users/nayvaka/Documents/Alibaba/UrlShortener/src/UrlShortener.csproj",
         "packagesPath": "/Users/nayvaka/.nuget/packages/",
-        "outputPath": "/Users/nayvaka/Documents/Alibaba/UrlShortener/obj/",
+        "outputPath": "/Users/nayvaka/Documents/Alibaba/UrlShortener/src/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
