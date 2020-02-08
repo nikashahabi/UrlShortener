@@ -61,7 +61,8 @@ namespace UrlShortener.Controller
             if (urlService.shortUrlExists(shortDomain))
             {
                 string[] prefixes = { "http", "https", "ftp" };
-                if (prefixes.Any(prefix => shortDomain.StartsWith(prefix)))
+    
+                if (prefixes.Any(prefix => urlService.returnLongUrl(shortDomain).StartsWith(prefix)))
                 {
                     return Redirect(urlService.returnLongUrl(shortDomain));
                 }
@@ -73,7 +74,7 @@ namespace UrlShortener.Controller
             }
             else
             {
-                return NotFound();
+                return BadRequest();
             }
             
         }
