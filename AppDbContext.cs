@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using UrlShortener.Models;
-namespace URLConverter
+namespace UrlShortener
 {
     public class AppDbContext : DbContext{
         public DbSet<Url> UrlsEntities { get; set;}
