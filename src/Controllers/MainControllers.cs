@@ -19,7 +19,7 @@ namespace UrlShortener.Controller
         [HttpPost]
         public ActionResult <Url> PostUrls ([FromBody]Url url)
         {
-            if (Regex.IsMatch(url.longUrl, @"^(?:(?:https?|ftp)://)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"))
+            if ((Regex.IsMatch(url.longUrl, @"^(?:(?:https?|ftp)://)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$")) && !url.longUrl.Contains("..") && !url.longUrl.Contains("--"))
             {
                 bool check;
                 string shortUrlString;
